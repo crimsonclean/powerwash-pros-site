@@ -10,10 +10,10 @@ export const Footer = () => {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Droplets className="h-8 w-8" />
-              <span className="text-2xl font-bold">Draw Power Washing</span>
+              <span className="text-2xl font-bold">Full Draw Power Washing</span>
             </div>
             <p className="text-primary-foreground/80">
-              Professional exterior cleaning services that restore beauty and protect your investment.
+              Hits the target every time when it comes to clean. Precision power washing for Edmond, Oklahoma City, Yukon, and Piedmont.
             </p>
           </div>
 
@@ -36,15 +36,15 @@ export const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg mb-4">Contact</h3>
             <ul className="space-y-2 text-primary-foreground/80">
-              <li>(555) 123-4567</li>
-              <li>info@drawpowerwashing.com</li>
-              <li>Serving the Greater Metro Area</li>
+              <li>(405) 204-8779</li>
+              <li>Available 24/7</li>
+              <li>Edmond, OK 73013</li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-primary-foreground/20 pt-8 text-center text-primary-foreground/60">
-          <p>&copy; {currentYear} Draw Power Washing. All rights reserved.</p>
+          <p>&copy; {currentYear} Full Draw Power Washing. All rights reserved.</p>
         </div>
       </div>
     </footer>

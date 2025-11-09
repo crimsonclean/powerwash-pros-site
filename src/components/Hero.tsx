@@ -24,18 +24,19 @@ export const Hero = () => {
         <div className="max-w-2xl">
           <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-4 py-2 mb-6 animate-in fade-in slide-in-from-bottom-3 duration-700">
             <Droplets className="h-4 w-4 text-primary" />
-            <span className="text-sm font-medium text-primary">Professional Power Washing</span>
+            <span className="text-sm font-medium text-primary">Edmond, OK • Available 24/7</span>
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100">
-            Transform Your Property with{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Draw Power Washing
+              Full Draw Power Washing
             </span>
+            <br />
+            <span className="text-3xl md:text-5xl">Hits the Target Every Time</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-in fade-in slide-in-from-bottom-5 duration-700 delay-200">
-            Professional exterior cleaning services that restore your home's beauty and protect your investment.
+            Precision power washing services for Edmond, Oklahoma City, Yukon, and Piedmont. We restore your property to its best appearance.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300">
@@ -50,10 +51,10 @@ export const Hero = () => {
               size="lg" 
               variant="outline"
               className="text-lg px-8 h-14 border-2 hover:bg-primary/5"
-              onClick={() => window.location.href = "tel:+1234567890"}
+              onClick={() => window.location.href = "tel:+14052048779"}
             >
               <Phone className="mr-2 h-5 w-5" />
-              Call Now
+              (405) 204-8779
             </Button>
           </div>
 

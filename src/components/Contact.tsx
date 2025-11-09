@@ -5,6 +5,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
+import { z } from "zod";
+
+const contactSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
+  email: z.string().trim().email("Invalid email address").max(255, "Email must be less than 255 characters"),
+  phone: z.string().trim().min(10, "Phone number must be at least 10 digits").max(20, "Phone number must be less than 20 characters"),
+  message: z.string().trim().max(1000, "Message must be less than 1000 characters"),
+});
 
 export const Contact = () => {
   const { toast } = useToast();
@@ -17,6 +25,19 @@ export const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    const validation = contactSchema.safeParse(formData);
+    
+    if (!validation.success) {
+      const errors = validation.error.errors;
+      toast({
+        title: "Validation Error",
+        description: errors[0].message,
+        variant: "destructive",
+      });
+      return;
+    }
+
     toast({
       title: "Quote Request Received!",
       description: "We'll contact you within 24 hours to discuss your project.",
@@ -132,8 +153,8 @@ export const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Call Us</h3>
-                    <a href="tel:+1234567890" className="text-muted-foreground hover:text-primary transition-colors">
-                      (555) 123-4567
+                    <a href="tel:+14052048779" className="text-muted-foreground hover:text-primary transition-colors">
+                      (405) 204-8779
                     </a>
                   </div>
                 </div>
@@ -148,8 +169,8 @@ export const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Email</h3>
-                    <a href="mailto:info@drawpowerwashing.com" className="text-muted-foreground hover:text-primary transition-colors">
-                      info@drawpowerwashing.com
+                    <a href="mailto:contact@fulldrawpowerwashing.com" className="text-muted-foreground hover:text-primary transition-colors break-all">
+                      contact@fulldrawpowerwashing.com
                     </a>
                   </div>
                 </div>
@@ -165,7 +186,7 @@ export const Contact = () => {
                   <div>
                     <h3 className="font-semibold mb-1">Service Area</h3>
                     <p className="text-muted-foreground">
-                      Serving the Greater Metro Area
+                      Edmond, Oklahoma City, Yukon & Piedmont, OK
                     </p>
                   </div>
                 </div>
@@ -179,10 +200,9 @@ export const Contact = () => {
                     <Clock className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Business Hours</h3>
-                    <p className="text-sm text-muted-foreground">Mon-Fri: 8am - 6pm</p>
-                    <p className="text-sm text-muted-foreground">Sat: 9am - 4pm</p>
-                    <p className="text-sm text-muted-foreground">Sun: Closed</p>
+                    <h3 className="font-semibold mb-1">Availability</h3>
+                    <p className="text-sm text-muted-foreground font-semibold">Available 24/7</p>
+                    <p className="text-sm text-muted-foreground mt-1">Call anytime for emergency service or to schedule your cleaning</p>
                   </div>
                 </div>
               </CardContent>
